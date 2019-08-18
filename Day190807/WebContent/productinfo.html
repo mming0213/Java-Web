@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>제품 조회창</title>
+
+	<script type="text/javascript">
+	function fn_validate(){
+		var frmLogin = document.frmLogin;
+		var prod_id = frmLogin.prod_id.value;
+		
+		frmLogin.method = "post";
+		frmLogin.action = "prod";
+		frmLogin.submit();
+	}
+	</script>
+
+</head>
+<body>
+	<form name="frmLogin">
+	<h1>제품 조회창</h1><br>
+		
+	제품번호 : <input type="text" name="prod_id">
+	공급업체번호 : <input type="text" name="vend_id">
+		
+	<input type="button" value="조회하기" onClick="fn_validate()">
+	<!-- <button onclick="location.href='address'">button</button> 현재페이지에 부를때 -->
+	<input type="button" value="제품추가" onClick="location.href='addProduct.html'">
+	<input type="hidden" name="command" value="productSearch">
+	</form>
+</body>
+</html>

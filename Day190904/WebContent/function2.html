@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script>
+	//메소드로서의 함수
+	/*
+	var calculator = {
+			operand1: 1, 
+			operand2: 1,
+			//함수는 this라는 property를 통해 자신이 속한 객체에 접근할 수 있다.
+			compute: function(){
+				this.result = this.operand1 + this.operand2;
+			}
+	};
+	
+	calculator.compute();
+	console.log(calculator.result); //결과 출력
+	*/
+	
+	//함수 Property: length => 정의된 함수 매개변수 갯수
+	/*
+	function check(args){
+		var actual = args.length; //실제로 전달 받은 매개변수 갯수.
+		var expected = args.callee.length; //함수가 기대하는 매개변수 갯수 (callee: 자기 자신를 호출.)
+		if (actual != expected){
+			throw new Error('Wrong number of arguments');
+		}
+	}
+	function f(x, y, z){
+		//함수가 기대하는 전달인자를 받았는지 검사
+		check(arguments);
+		return x+y+z;
+	}
+	console.log(f(1,2)); //결과 출력
+	*/
+	
+	//함수 Property 추가하기
+	//함수의 정적 Property 생성하고 초기화
+	/*
+	uniqueInteger.counter = 0;
+	//호출할 때마다 다른 값을 리턴
+	function uniqueInteger(){
+		return uniqueInteger.counter++;
+	}
+	console.log(uniqueInteger()); //결과 출력
+	console.log(uniqueInteger());
+	console.log(uniqueInteger());
+	*/
+	
+	//객제 Property를 전달인자로 사용하기
+	function arraycopy(from, from_start, to, to_start, length)
+	
+	function easycopy(args){
+		arraycopy(args.from, args.from_start || 0, args.to, args.to_start || 0, args.length); 
+	}
+	
+	//console.log(easycopy(1,2,3,4,5));
+	
+	
+	
+</script>
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script>
+	window.addEventListener("load", function(){
+	/*
+	var arrayA = ['b', 'c', 'a'];
+	arrayA.sort(); //정렬하기
+	
+	arrayA.forEach(function(item){
+		console.log(item);
+	});
+	
+	arrayA.reverse(); //역순으로 정렬하기
+	arrayA.forEach(function(item){
+		console.log(item);
+	});
+	*/
+	
+	/*
+	
+	var arrayB = [40, 100, 1, 5, 25, 10];
+	arryB.sort(function(a,b){return a - b}); //정렬 기준 함수를 매개변수로 전달
+	
+	arrayB.forEach(function(item){
+		console.log(item);
+	});
+	*/
+	
+	/*
+	var txt = ""; //전역변수
+	var numbers = [45, 4, 9, 16, 25];
+	numbers.forEach(myFunction); //각 요소별 함수 호출
+	document.getElementById("demo").innerHTML = txt;
+	function myFunction(value, index, array){ //value(요소), array(전체 배열)
+		txt = txt + value + "<br>";
+	}
+	*/
+	
+	/*
+	var numbers = [4, 9, 16, 25, 29];
+	var first = numbers.find(myFunction); //25, 함수 조건을 만족하는 첫번째 요소 값, findIndex 존재
+	document.getElementById("demo").innerHTML = "First number over 18 is " + first;
+	function myFunction(value, index, array){
+		return value > 18;
+	}
+	*/
+	
+	//배열처럼 작동하는 유사배열을 내부적으로 많이 사용
+	//a.name
+	//a.[name] //property 생성해주며 접근도 할 수 있음. 
+	var a =  {};
+	//1. 유사배열을 만들기위해 property추가 
+	var i = 0;
+	while(i < 10){
+		a[i] = i * i;
+		i++;
+	}
+	a.length = i;
+	
+	var total = 0;
+	for(var j = 0; j < a.length; j++){
+		total += a[j];
+	}
+	
+	alert(total);
+	
+	
+	});
+</script>
+<title>Insert title here</title>
+</head>
+<body>
+	<p id="demo">테스트</p>
+</body>
+</html>

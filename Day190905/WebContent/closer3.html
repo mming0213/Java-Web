@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script>
+	var id = 0;
+	var counter = {
+			inc: (function(){
+				return function(){
+					return id++;
+				}
+			})(),
+			dec: (function(){
+				return function(){
+					return id--;
+				}
+			})(),
+			val:(function(){
+				return function(){
+					return id;
+				}
+			})()
+			
+	}
+	
+	counter.inc();//1
+	counter.inc();//2
+	counter.dec();
+	console.log(counter.val()); // 1출력
+	
+</script>
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>

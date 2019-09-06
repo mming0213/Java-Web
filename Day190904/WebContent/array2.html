@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script>
+	window.addEventListener("load", function(){
+		var numbers1 = [45, 4, 9, 16, 25];
+		var numbers2 = numbers1.map(myFunction); //함수로직을 반영한 새로운 배열 리턴
+		document.getElementById("demo").innerHTML = numbers2;
+		function myFunction(value, index, array){
+			return value*2;
+		}
+	
+	
+	
+	
+	/*	var numbers =  [45, 4, 9, 16, 25];
+	var over18 = numbers.filter(myFunction); //함수가 true인 요소들의 새로운 배열을 리턴.
+	//document.getElementById("demo").innerHTML = over18;
+	function myFunction(value, index, array){
+		return value > 18;
+	}
+	*/
+	
+	/*
+	var numbers =  [45, 4, 9, 16, 25];
+	var allOver18 = numbers.every(myFunction); //모든 요소가 함수의 조건을 만족하는지 Check, some 존재
+	document.getElementById("demo").innerHTML = "All over 18 is " + allOver18;
+	function myFunction(value, index, array){
+		return value > 0;
+	}
+	*/
+	
+	/*
+	var fruits = ["Apple", "Orange", "Apple", "Mango"];
+	var a = fruits.indexOf("Orange"); // 0, lastIndexOf 존재
+	document.getElementById("demo").innerHTML = "Apple is found in position "  + a;
+	*/
+	
+	});
+</script>
+<title>Insert title here</title>
+</head>
+<body>
+	<p id="demo">테스트</p>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script>
+	//1.클로저:중첩함수
+	/*function makefunc(x){
+		return function(){
+			return x;
+		}
+	}
+	//리턴된 함수를 배열요소에 저장
+	var a = [makefunc('x'), makefunc('y'), makefunc('z')];
+	alert(a[0]()); //x출력
+	alert(a[1]()); //y출력
+	alert(a[2]()); //z출력
+	*/
+	
+	//2.클로저를 사용하여 Counter만들기
+	//아래 소스는 외부에서 counter값을 변경할 수 있는 문제 존재
+	//uniqueInteger.counter = 0;
+	//function uniqueInteger(){
+	//	return uniqueInteger.counter++;
+	//}
+	
+	//클로저를 이용해 해결한 소스
+
+	var uniqueID = (function(){
+		var id = 0;
+		return function(){
+			return id++;
+		}
+	})();
+	
+	console.log(uniqueID());
+	console.log(uniqueID());
+
+	
+	//클로저를 사용한 private 멤버변수
+	/*
+	function makeProperty(o, name, predicate){
+		var value; //private 변수
+		//getter 메서드
+		o['get'+name] = function(){ //오브젝트 안에 []을 통해 property 접근.
+			return value;
+		};
+		//setter 메서드
+		o['set'+name] = function(v){
+			if(predicate && !predicate(v)) //메소드가 존재하고 false를 리턴하면
+				throw 'set'+name+':invalid value'+ v;	
+			else 
+				value = v;
+		};
+		
+	}
+	
+	var o = {};
+	//Name Property 추가, set은 string만 가능
+	makeProperty(o,'Name',function(x){
+		return typeof x == 'string';
+	});
+	o.setName('Frank'); //값 설정
+	console.log(o.getName()); //값 출력
+*/
+	
+	
+</script>
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>

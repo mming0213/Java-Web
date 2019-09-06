@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script>
+	function join(){
+		//숫자를 스트링으로 바꾸기
+		//var tt = 123456.789;
+		//tt = tt.toString();
+		//alert(typeof tt); //result: string
+		
+		//var tt = 123456.789;
+		//t = tt.toFixed(0);
+		//alert(tt); //result: string(123456.789)
+		
+		//var tt = 123456.789;
+		//tt = tt.toFixed(2);
+		//alert(typeof tt); //result: string(123456.79)
+		
+		//boolean과 숫자 연산
+		//var tt = true;
+		//tt = tt + 1; //2
+		//alert(typeof tt); //result: number
+		
+		//boolean과 문자 연산
+		//var tt = true
+		//tt = tt + "1"; //true1
+		//alert(typeof tt); //result: boolean
+		
+		//스트링을 숫자로 바꾸기
+		//var tt="2";
+		//tt *= 1;
+		//alert(typeof tt); //result: number
+		
+		//숫자를 스트링으로 바꾸기
+		//var tt = 2;
+		//alert(typeof tt); //result: number
+		//tt = String(tt);
+		//alert(typeof tt); //result: string
+		
+		//스트링을 숫자로 바꾸기
+		//var tt = "2";
+		//alert(typeof tt); //result:string
+		//tt = Number(tt); //숫자만 변환 가능
+		//alert(typeof tt); //result:number
+		
+		//var tt = "3.14 AA";
+		//alert(typeof tt);	//result:string
+		//tt = parseInt(tt);	//정수만 변환가능
+		//alert(typeof tt); //result: number;
+		
+		var tt = "3.14 AA";
+		alert(typeof tt);	//result:string
+		tt = parseFloat(tt);	//실수만 변환가능
+		alert(typeof tt); //result: number;
+	}
+
+</script>
+<title>Insert title here</title>
+</head>
+<body>
+	<input type="button" value="실행하기" onClick="join()">
+</body>
+</html>

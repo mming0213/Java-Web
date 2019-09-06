@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>공급업체 수정하기</title>
+	<script type="text/javascript">
+	function fn_edit(){
+		var vendorEdit = document.vendorEdit;
+		var vend_id = vendorEdit.vend_id.value;
+		var vend_name = vendorEdit.vend_name.value;
+		var vend_address = vendorEdit.vend_address.value;
+		var vend_city = vendorEdit.vend_city.value;
+		var vend_state = vendorEdit.vend_state.value;
+		var vend_zip = vendorEdit.vend_zip.value;
+		var vend_country = vendorEdit.vend_country.value;
+		
+		if(vend_id.length == 0 || vend_id == ""){
+			alert("공급업체번호는 필수입니다.");
+		} if(vend_name.length == 0 || vend_name == ""){
+			alert("공급업체명은 필수입니다.");
+		} if(vend_address.length == 0 || vend_address == ""){
+			alert("공급업체주소는 필수입니다.");
+		} if(vend_zip.length == 0 || vend_zip == ""){
+			alert("공급업체우편번호는 필수입니다.");
+		}else{
+			vendorEdit.method = "post";
+			vendorEdit.action = "vendor";
+			vendorEdit.submit();
+		}
+	}
+	</script>
+
+</head>
+<body>
+	<form name="vendorEdit">
+	<h1>공급업체 수정 </h1><br>
+		
+	공급업체번호 : <input type="text" name="vend_id"><br>
+	공급업체이름 : <input type="text" name="vend_name"><br>
+	공급업체주소 : <input type="text" name="vend_address"><br>
+	공급업체 시 : <input type="text" name="vend_city"><br>
+	공급업체 주 : <input type="text" name="vend_state"><br>
+	공급업체 우편번호 : <input type="text" name="vend_zip"><br>
+	공급업체 국가 : <input type="text" name="vend_country"><br>
+		
+	<input type="button" value="수정" onClick="fn_edit()">
+	<input type="hidden" name="command" value="editMember">
+	</form>
+</body>
+</html>

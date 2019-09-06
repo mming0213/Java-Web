@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>공급업체 조회 창</title>
+
+	<script type="text/javascript">
+	function fn_searchvendor(){
+		var frmLogin = document.frmLogin;
+		var vend_id = frmLogin.vend_id.value;
+
+		frmLogin.method = "post";
+		frmLogin.action = "vendor";
+		frmLogin.submit();
+
+	}
+	</script>
+
+</head>
+<body>
+	<form name="frmLogin">
+	<h1>공급 업체 조회창</h1><br>
+		
+	공급업체번호 : <input type="text" name="vend_id">
+		
+	<input type="button" value="조회하기" onClick="fn_searchvendor()">
+	<input type="hidden" name="command" value="vendorSearch">
+	</form>
+</body>
+</html>

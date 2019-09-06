@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script>
+//클로저: 지역변수의 범위를 벗어나서 사용 가능하게 해줌.
+	/*function test(name){
+		var output = 'Hello' + name + '...!'; //private 멤버 변수
+		//내부 메서드에서는 private 멤버 변수 사용가능
+		return function(){ //내부 메서드를 통해서
+			alert(output);
+		};
+	}
+	
+	test('JavaScript')();
+	*/
+	
+	//전역 변수는 var문을 생략해도 되지만
+	//지역변수는 반드시 var문을 써야한다.
+	scope = "global";
+	console.log(scope);
+	function checkscope(){
+		scope = "local"; //전역변수를 바꾸어버림
+		console.log(scope);
+		myscope = "local";
+		console.log(myscope); //새로운 전역변수 생성
+	}
+	
+	checkscope();
+	
+	
+	/*
+	var uniqueID = (function(){
+		var id = 0; //private 속성을 가진다. 함수만이 접근가능
+		//uniqueID에 저장되는 것은 값이 아닌 중첩된 함수이다.
+		return function(){
+			return id++; //값을 증가시켜서 반환
+		}
+	})();
+	
+	for(var i = 0; i < 3; i++){
+		alert(uniqueID());
+	}
+	*/
+	
+</script>
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>

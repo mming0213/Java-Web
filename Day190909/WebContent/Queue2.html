@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script>
+	function Queue(){
+		var data = [];
+		var len = 0;
+		
+		this.enqueue = function(str){
+			data[len++] = str;
+		};
+		
+		this.dequeue = function(){
+			data.shift();
+			len--;
+		}
+		
+		this.isEmpty = function(){
+			return len === 0;
+		};
+		
+		this.size = function(){
+			return len;
+		};
+		
+		this.clear = function(){
+			data = [];
+		}
+		
+		this.print = function(){
+			console.log(data.toString());
+		};
+		
+		
+	}
+	
+	var queue = new Queue();
+	console.log(queue.isEmpty()); //true
+	queue.enqueue("John");
+	queue.enqueue("Jack");
+	queue.print(); //John, Jack
+	queue.enqueue("Camila");
+	queue.print(); //John, Jack, Camila
+	console.log(queue.size()); //3
+	console.log(queue.isEmpty()); //false
+	queue.dequeue();
+	queue.dequeue();
+	console.log(queue.size()); //1
+	queue.size();
+	queue.print(); //Camila
+	
+</script>
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>

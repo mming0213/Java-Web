@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script>
+	var stduent = {
+			이름:'염민주',
+			나이: '25'
+	};
+	
+	//1. 객체의 Property를 배열로 반환
+	/*function getPropertynames(o){
+		arr=[];
+		for(var pro in o){
+			arr.push(pro);
+		}	
+		return arr;
+	}
+	getPropertynames(stduent);
+	console.log(arr);
+	*/
+	
+	//2. from의 객체를 to로 Copy
+	/*
+	to = {};
+	
+	function copyProperties(from, to){
+		if(!to) to = {};
+		for(var pro in from){
+			to[pro] = from[pro];
+		}
+		return to;
+	}
+	copyProperties(stduent, to);
+	console.log(to);
+	*/
+	
+	
+	//3.From의 객체를 to로 Copy하되 to에 없는 속성만 Copy
+	to = {};
+	function copyUndefineProperties(from, to){
+		for(var pro in from){
+			if(!(pro in to)){
+				to[pro] = from[pro];
+			}
+		}
+		return to;
+	}
+	copyUndefineProperties(stduent, to);
+	console.log(to);
+	
+	
+	
+</script>
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>

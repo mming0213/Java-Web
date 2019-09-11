@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script>
+/*
+	var d = new Date();
+	d.getFullYear(); //set 메소드 있음.
+	d.getMonth(); //set
+	d.getDate(); //set
+	d.getHours();	//set
+	d.getMinutes();	//set
+	d.getSeconds();	//set
+	d.getMilliseconds();	//set
+	d.getDay();//0~6 (0: 일요일)
+	
+	var d = new Date("2015-03-25");
+	var d1 = new Date("2015-03");
+	//YYYY-MM-DDTHH:MM:SSZ
+	var d2 = new Date("2015-03-25T12:00:00Z");
+	console.log(d);
+	console.log(d1);
+	console.log(d2);
+	*/
+	
+	//날짜 간격 구하기
+	/*
+	var now = new Date();
+	var before = new Date('December 9, 1991');
+	
+	var interval = now.getTime() - before.getTime();
+	interval = Math.floor(interval/(1000*60*60*24));
+	
+	alert('Interval:' + interval + '일'); //Interval:10136일
+	*/
+	
+	//프로토타입에 날짜 간격 구하는 메서드 추가
+	Date.prototype.getInterval = function(otherDate){
+		//변수 선언
+		var interval;
+		
+		//양수로 날짜 간격을 구하려고 조건문을 사용합니다.
+		if(this > otherDate){
+			interval = this.getTime() - otherDate.getTime();
+		}else{
+			interval = otherDate.getTime() - this.getTime();
+		}
+		
+		return Math.floor(interval/(1000*60*60*24));
+	};
+	
+	var now = new Date();
+	var befor = new Date('December 9, 1991');
+	
+	alert('interval:' + now.getInterval(befor) + '일'); //interval:10136일
+
+
+</script>
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	var jb = $('li').get(0); //0번째 요소를 리턴
+	
+	$('ul').after('<p>'+jb.innerHTML + '</p>');	
+});
+</script>
+<title>Insert title here</title>
+</head>
+<body>
+	<ul>
+		<li>Lorem</li>
+		<li>lpsum</li>
+	</ul>
+	<div></div>
+</body>
+</html>

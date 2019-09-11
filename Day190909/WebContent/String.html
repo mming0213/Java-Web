@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script>
+
+	//stringbuffer는 원소스를 변경할 수 있음.
+	//string 원소스를 변경할 수 없음.
+
+	var str1 = "Please locate where 'locate' occurs!";
+	var pos1 = str1.indexOf("locate");
+	console.log(pos1); //7
+	var pos2 = str1.indexOf("locate", 15); //시작 Index 존재
+	console.log(pos2); //21
+	var pos3 = str1.lastIndexOf("locate");
+	console.log(pos3); //21
+	
+	var str2 = "Apple,Banana,Kiwi";
+	var res1 = str2.slice(7,13);
+	console.log(res1); //anana,
+	var res2 = str2.slice(7); //Index 7 이후의 string
+	console.log(res2); //anana,Kiwi
+	var res3 = str2.substring(7,13);
+	console.log(res3); //anana,
+	
+	var str3 = "Please visit Microsoft!";
+	var txt = str3.replace("Microsoft", "test");
+	console.log(txt); //
+
+	var text1 = "HelloWorld!";
+	var text2 = text1.toUpperCase();
+	console.log(text2); 
+	
+	var text3 = "Hello";
+	var text4 = "World";
+	var text5 = text1.concat("", text4);
+	console.log(text5); 
+	
+	var str4 = " 	HelloWorld!			";
+	alert(str4.trim());
+	
+	var str5 = "HELLOWORLD";
+	str5.charAt(0);
+	str5.charCodeAt(0); //uft-16 리턴
+	str5[0]; //H, 변경안됨
+	
+	var txt2 = "a,b,c,d,e";
+	txt2.split(","); //arr로 리턴
+	
+	var txt3 = "Hello";
+	txt3.split(""); //문자열을 하나씩 arr로
+	
+
+	
+</script>
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>

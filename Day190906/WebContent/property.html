@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script>
+	var student={};
+	student.이름 = '윤인성';
+	student.취미 = '악기';
+	student.특기 = '프로그래밍';
+	student.장래희망 = '생명공학자';
+	
+	student.toString = function(){
+		var output = '';
+		for(var key in this){
+			//toString()메서드는 출력하지 않게 합니다.
+			if(key != 'toString'){
+				output += key + '\t' + this[key] + '\n';
+			}
+		}
+		return output;
+	};
+	
+	console.log("delete 전 = " + student);
+	
+	delete(student.장래희망);
+	console.log("delete 후 = " + student);
+	
+	
+</script>
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>

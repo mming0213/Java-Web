@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript">
+	//나자신
+	/*
+	$(document).ready(function(){
+		$("button").click(function(){
+			$(this).hide();
+		});
+	});
+	*/
+	//.intro를 class로 가지는 p태그
+	/*
+	$(document).ready(function(){
+		$("button").click(function(){
+			$("p.intro").hide();
+		});
+	});
+	*/
+	//button tag or input type이 button인 태그
+	$(document).ready(function(){
+		$("button").click(function(){
+			$(":button").hide();	
+		});
+	});
+	
+	
+</script>
+<title>Insert title here</title>
+</head>
+<body>
+	<h2 class="intro">This is a heading</h2>
+	<p class="intro">This is a paragraph.</p>
+	<p>This is another paragraph.</p>
+	<button>Click me</button>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script>
+	//노드 아래의 모든 텍스트 얻기
+	//Text 노드를 이어 붙이고 문자열로 반환
+	function getText(n){
+		var strings = [];
+		getString(n,  strings);
+		return strings.join(" ");
+		function getStrings(n, strings){
+			if(n.nodeType == 3) strings.push(n.data);  //텍스트 노드면  push
+			else if(n.nodeType == 1){
+				for(var m = n.firstChild; m != null; m=m.nextSibling){
+					getStrings(m,strings);
+				}
+			}
+		}
+	}
+</script>
+<title>Insert title here</title>
+</head>
+<body>
+	
+</body>
+</html>

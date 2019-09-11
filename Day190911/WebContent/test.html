@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+
+<title>Insert title here</title>
+</head>
+<body>
+	 <ul id='list'><li>c</li><li>b</li><li>a</li><li>d</li>
+	 </ul>
+	 <button onclick="sortkids('list')">Sort list</button>
+	 
+	 <script>
+	 	function sortkids(e){
+			var arr = [];
+			var child_elements = document.getElementById('list').childNodes;
+			//console.log(child_elements);
+			
+			for(var i = 0; i < child_elements.length-1; i++){
+				//console.log(child_elements[i]);
+				
+				var lis = document.getElementById('list').getElementsByTagName('li');
+				//alert(child_elements[i].childNodes[0].nodeValue);
+				arr.push(child_elements[i].childNodes[0].nodeValue);
+			
+			}
+			console.log(arr);
+			
+			var sort = arr.sort();
+			console.log(sort);
+			
+			for(var i = 0; i < child_elements.length-1; i++){
+				child_elements[i].innerHTML = arr[i];
+			}
+			
+		}
+	 </script>
+</body>
+</body>
+</html>

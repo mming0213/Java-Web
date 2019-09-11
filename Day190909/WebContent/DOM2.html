@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>쇼핑 목록</h1>
+	<p title="a gentle reminder">물건을 선택해 주세요</p>
+	<ul id="purchases">
+		<li>땅콩</li>
+		<li>치즈</li>
+	</ul>
+	
+	<script>
+		/*
+		var paras = document.getElementsByTagName("p");
+		//var paras = document.getElementsByTagName("li");
+		for(var i = 0; i < paras.length; i++){
+			var title_text = paras[i].getAttribute("p");
+			if(title_text){	//if(title_text != null) 같은 의미
+				alert(title_text);
+			}
+		}
+		*/
+		
+		var shopping = document.getElementById("purchases");
+		//만약 setAttribute의 첫번째 인자인 속성이 해당 요소노드에 없다면 해당 속성을 생성하여 준다.
+		shopping.setAttribute('title', 'a list of goods');
+	
+		
+		//<body onload="test">
+		
+		
+		
+	</script>
+</body>
+</html>

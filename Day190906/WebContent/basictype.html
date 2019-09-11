@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var primitiveNumber = 273;
+	var objectNumber = new Number(273);
+	
+	//Number 객체에 메서드를 추가하면 number dateType인 primitiveNumber도 추가된 메서드 사용가능
+	Number.prototype.method = function(){
+		return 'Method on Prototype';
+	};
+	
+	
+	/*
+	var output="";
+	output += typeof(primitiveNumber) + ' : ' + primitiveNumber + '\n';
+	output += typeof(objectNumber) + ' : ' + objectNumber;
+	alert(output);
+	*/
+	var output = '';
+	output += primitiveNumber.method() + '\n';
+	output += objectNumber.method();
+	alert(output);
+</script>
+</head>
+<body>
+
+</body>
+</html>

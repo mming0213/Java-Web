@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script>
+//Set(집합): 순서가 없고 집합이므로 중복된 데이터가 들어갈 수 없음.
+//중복되지 않는 숫자(데이터)를 구할 때 사용하면 유용함.
+	function Set(){
+		var items = {};
+		var len = 0;
+		
+		this.add = function(value){
+			if(!this.has(value)){
+				items[value] = len++;
+				return true;
+			}
+			return false;
+		};
+
+		this.remove = function(value)
+		{
+			if(this.has(value)){
+				delete items[value];
+				len--;
+				return true;
+			}
+			return false;
+		};
+		
+		//중복 여부 확인
+		this.has = function(value){
+			return items.hasOwnProperty(value); //특정 프로퍼티에 대한 소유 여부 반환
+		};
+		
+		this.clear = function(){
+			items = {};
+		};
+		
+		this.size = function(){
+			return len;
+		};
+		
+		this.values = function(){
+			return Object.keys(items);
+		};
+		
+		this.print = function(){
+			console.log(items);
+		};
+	}
+	
+	var set = new Set();
+	set.add(1);
+	console.log(set.values()); //["1"]
+	set.print();
+	console.log(set.has(1)); //true
+	console.log(set.size()); // 1
+	set.add(2);
+	console.log(set.values()); //["1", "2"]
+	set.remove(1);
+	console.log(set.values()); //["2"]
+	set.clear();
+	console.log(set.values()); //[]
+	
+</script>
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>

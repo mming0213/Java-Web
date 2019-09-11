@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script>
+	//생성자 함수 정의
+	function Circle(radius){
+		//r은 프로퍼티이고 생성자 함수에서 초기화
+		this.r = radius;
+	}
+	//클래스 프로퍼티, 생성자함수의 프로퍼티
+	Circle.PI = 3.14159;
+	//인스턴스 메서드
+	Circle.prototype.area = function(){
+		return Circle.PI * this.r * this.r;
+	}
+	//클래스 메서드, this 없음.
+	Circle.max = function(a,b){
+		if(a.r > b.r) return a;
+		else return b;
+	}
+	var c = new Circle(1,10); //인스턴스 생성
+	c.r = 2.2; //인스턴스 프로퍼티
+	var a = c.area(); //인스턴스 메서드
+	var x = Math.exp(Circle.PI); //클래스 프로퍼티, Math.exp(): 상수 e(약 2.71828)값을 입력받은 인자 값만큼 거듭제곱하는 함수. 
+	var d = new Circle(1.2); //다른 인스턴스
+	var bigger = Circle.max(c, d); //클래스 메서드
+	
+	console.log("a="+a);
+	console.log("x="+x);
+	console.log("d="+d.r);
+	console.log("bigger="+bigger.r);
+	
+</script>
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>

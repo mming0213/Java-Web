@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script>
+	function Stack(){
+		var data = [];
+		var len = 0;
+	
+		this.push = function(su){
+			data[len++] = su;
+		};
+		
+		this.pop = function(){
+			data.splice(len-1, 1);
+			len--;
+		};
+		
+		this.peek = function(){
+			return data[len-1];
+		}
+		
+		this.isEmpty = function(){
+			return len === 0;
+		};
+		
+		this.size = function(){
+			return len;
+		};
+		
+		this.clear = function(){
+			data = [];
+		}
+		
+		this.print = function(){
+			console.log(data.toString());
+		};
+		
+	}
+	
+	var stack = new Stack();
+	console.log(stack.isEmpty()); //true
+	stack.push(5);
+	stack.push(8);
+	stack.print();
+	console.log(stack.peek()); //8
+	stack.push(11);
+	console.log(stack.size()); //3
+	console.log(stack.isEmpty()); //false
+	stack.push(15);
+	stack.pop();
+	stack.pop();
+	console.log(stack.size()); //2
+	stack.print(); //[5,8]
+	
+</script>
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>

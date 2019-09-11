@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script>
+	function ListNode(data){
+			this.data = data;
+			this.next = null;			
+	}
+	
+	function LinkedList(str){
+		var head = null; //연결이 시작되는 지점을 참조 
+		var length = null;
+		var current;
+		
+		this.append = function(str){
+			var node = new ListNode(str);
+			
+			if(this.head == null){
+				this.head = node;
+			}else{
+				current = this.head;
+				while(current.next != null){
+					current = current.next;
+				}
+				current.next = node;
+			}
+			this.length++;
+		};
+		
+		this.removeAt = function(pos){
+			if(pos > -1 && pos < this.length){
+				var current = this.head;
+				var prev;
+				var index = 0;
+			}
+			
+			if(pos === 0){
+				this.head = current.next;
+			}else{
+				while(index++ < pos){
+					prev = current;
+					current = prev.next;
+				}
+			}
+			
+			prev.next = current.next;
+			current.next = null;
+			
+			return current.data;
+		};
+		
+		this.insert = function(pos, str){	
+			if(pos >= 0){
+				var node = new ListNode(str);
+				var current = this.head;
+				var prev;
+				var index = 0;
+			
+			
+				if(pos === 0){
+					node.next = current;
+					this.head = node;
+				}else{
+					while(index++ < pos){
+						prev = current;
+						current = current.next;
+					}
+					node.next = current;
+					prev.next = node;
+				}
+			
+				return true;
+			}
+			return false;
+		};	
+		
+		this.indexOf = function(str){
+			var current = this.head;
+			var index = 0;
+			
+			while(current){
+				if(current.data === str){
+					return index;
+				}
+				index++;
+				current = current.next;
+			}
+			
+			return -1;
+		};
+		
+	
+		this.print = function(){
+			var current = this.head;
+			var str = "";
+			
+			if(this.head == null){
+				alert("출력할 리스트가 존재하지 않습니다.")
+			}else{
+				str += '[';
+				while(current.next != null){
+					str += current.data + " ";
+					current = current.next;	
+				}
+				str += current.data;
+				str += ']';
+				console.log(str);
+			}
+
+		};
+		
+		
+	};
+	
+
+	var list = new LinkedList();
+	
+	list.append(15); // 맨뒤에 추가
+	list.print();
+	console.log(list.indexOf(15)); // value의 index를 리턴
+	list.append(10);
+	list.print();
+	console.log(list.indexOf(10));
+	list.append(13);
+	list.print();
+	console.log(list.indexOf(13));
+	console.log(list.indexOf(10));
+	list.append(11);
+	list.append(12);
+	list.print();
+	console.log(list.removeAt(1)); // 특정 index를 삭제
+	list.print()
+	console.log(list.removeAt(3));
+	list.print();
+	list.append(14);
+	list.print();
+	list.insert(0,16); // 특정 index에 추가
+	list.print();
+	list.insert(1,17);
+	list.print();
+
+</script>
+<title>Insert title here</title>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript">
+	//uil자손 모두 li 중 첫번째
+	/*
+	$(document).ready(function(){
+		$("button").click(function(){
+			$("ul li:first").hide();
+		});
+	});
+	*/
+	
+	$(document).ready(function(){
+		$("button").click(function(){
+			$("ul li:first-dhild").hide();
+		});
+	});
+</script>
+<title>Insert title here</title>
+</head>
+<body>
+	<p>List1:</p>
+	<ul>
+		<li>Coffee</li>
+		<li>Milk</li>
+		<li>Tea</li>
+	</ul>
+	<p>List2:</p>
+	<ul>
+		<li>Coffee</li>
+		<li>Milk</li>
+		<li>Tea</li>
+	</ul>
+	<button>Click me</button>
+</body>
+</html>

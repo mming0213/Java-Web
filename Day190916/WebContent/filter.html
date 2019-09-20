@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		//:nth-child(3) 형제 요소 중 3번째 요소들을 선택하는 선택자 
+		$("p:nth-child(3)").css("background-color", "yellow");
+		
+		//:first-child의 경우 div 하위 엘리멘트중에 p 엘리멘트가 가장 첫번재에 위치해야함.
+		//:first-of-type은 실제 p 엘리먼트만을 기준으로 카운트 함.
+		//$("p:first-of-type").css("background-color", "yellow");
+		//$("p:first-child").css("background-color", "yellow");
+	});
+
+</script>
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>11:This is a heading inbody</h1>
+
+	<p>12:AAAAAAAAA</p>
+	<p>13:BBBBBBBBB</p>
+	
+	<div style="border:1px solid;">
+	 <span>21:This is a span element in div</span>
+	 <p>22:AAAAAAAAA</p>
+	 <p>23:BBBBBBBBB</p>
+	 <p>24:CCCCCCCC</p>
+	</div><br>
+	
+	<div style="border:1px solid;">
+	 <p>31:AAAAAAAAA</p>
+	 <p>32:BBBBBBBBB</p>
+	 <p>33:CCCCCCCC</p>
+	</div>
+	
+	<p>14:CCCCCCCCC</p>
+</body>
+</html>

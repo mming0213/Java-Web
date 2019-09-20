@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script type="text/javascript">
+	//a 태그의 이벤트 안걸리게 하기 위해
+	$(document).ready(function(){
+		$("a").click(function(event){
+			//preventDefalut() : 기본 이벤트 제거 
+			 event.preventDefault();
+		});
+	});
+</script>
+
+<title>Insert title here</title>
+</head>
+<body>
+	<a href="http://w3schools.com/">Goto W3Schools.com</a>
+</body>
+</html>

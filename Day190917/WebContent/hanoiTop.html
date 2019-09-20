@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script>
+
+   var source = new Stack();
+   var dest = new Stack();
+   var helper = new Stack();
+   
+   function Stack(){
+      var data = [];
+      var len = 0;
+   
+      this.push = function(su){
+         data[len++] = su;
+
+      };
+      
+      this.pop = function(){
+         //data.splice(len-1, 1);
+         len--;
+         return data.pop();
+      };
+      
+      this.peek = function(){
+         return data[len-1];
+      }
+      
+      this.isEmpty = function(){
+         return len === 0;
+      };
+      
+      this.size = function(){
+         return len;
+      };
+      
+      this.clear = function(){
+         data = [];
+      }
+      
+      this.print = function(){
+         return data.toString();
+      };
+      
+   }
+   
+   //                       
+   function towerOfHanoi(n, from, to, helper){
+	     if(n <= 1){
+		   helper.push(from.pop());
+		   console.log('n='+n+'원반 1개만 남았을 때from:' + from.print() + '   to:' + to.print() + '   helper:' + helper.print());
+	   	   return;
+	     }
+	   
+         towerOfHanoi(n-1, from, helper, to);
+         helper.push(from.pop());
+         console.log('n='+n+'from:' + from.print() + '   to:' + to.print() + '   helper:' + helper.print());
+         towerOfHanoi(n-1, to, from, helper);
+
+   }   
+   
+
+   
+   //var source = new Stack();
+   source.push(3);
+   source.push(2);
+   source.push(1);
+   console.log(source.print());
+   
+//   var dest = new Stack();
+//   var helper = new Stack();
+   
+   //n:타워의 요소개수
+   //from: source 타워
+   //to: target 타워
+   //helper: helper 타워
+   towerOfHanoi(3, source, dest, helper);
+   
+</script>
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>

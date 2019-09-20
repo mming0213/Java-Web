@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>동적 추가 만들기(jQuery)</title>
+<style> 
+ #menu{
+   border: 1px solid gray;
+   padding: 25px;
+   width: 700px;
+   list-style:none;
+   
+ }
+ .select{
+   background:black;
+   color:white;
+ }
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script type="text/javascript">
+ $(document).ready(function(){
+  var idx = 3;
+  var currentidx = '';
+  
+  //추가
+  $('#btnAdd').click(function(){
+        $("#menu").append(function(){
+         var output = '';
+         idx++;
+         var inputvalue = $('.txt').val();
+         output += '<li id="' + idx + '">'+ inputvalue +'</li>';
+         return output;
+        });
+   });
+   
+  
+  $('#menu').on('click', 'li', function(e){
+   		var value = $(e.target).text();
+   		$('.txt').val(value);
+     
+   
+   
+	   //$(this).addClass('select');
+	 
+	     $('li').on({
+	        
+	        mousedown: function(){$(this).addClass('select');},
+	        mouseleave: function(){$(this).removeClass('select');}
+	     });
+	     
+	    currentidx = $(this).attr('id');
+	   // console.log(currentidx);
+	    
+	   });
+	  
+  	  //삭제
+	  $('#btnDel').click(function(){
+	     $('li').remove('#'+currentidx);
+	  });    
+	   
+  	  //수정
+	   $('#btnEdit').click(function(){ 
+	      var editvalue = $('.txt').val();
+	      $('#'+currentidx).text(editvalue);
+	   });
+	  
+	   //Up
+	   $('#btnUp').click(function(){ 
+		   //$(A).after(B) : B를 A의 뒤에 추가
+		   //선택된 요소의 뒤에 직전 요소를 추가한다.
+		   $('#'+currentidx).after($('#'+currentidx).prev());
+	   });
+	 
+	   //Down
+  	   $('#btnDown').click(function(){ 
+  		 //$(A).before(B) : B를 A의 앞에 추가
+  		 //선택된 요소의 앞에 직후 요소를 추가한다.
+	    	 $('#'+currentidx).before($('#'+currentidx).next());
+	   });
+  
+ });
+</script>
+</head>
+<body>
+	 <input type="text" class="txt">
+	 <input type="button" id="btnAdd" value="추가">
+	 <input type="button" id="btnEdit" value="수정">
+	 <input type="button" id="btnDel" value="삭제">
+	 <input type="button" id="btnUp" value="UP">
+	 <input type="button" id="btnDown" value="DOWN"><br><br>
+	  <ul id='menu'>
+	    <li id="1">메뉴1</li>
+	    <li id="2">메뉴2</li>
+	    <li id="3">메뉴3</li>
+	  </ul>
+</body>
+</html> 
+ 

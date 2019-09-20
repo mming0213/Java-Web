@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		var $checkbox = $('#chk');
+		
+		console.log($checkbox.attr('checked'));	//checked
+		console.log($checkbox.prop('checked')); //true
+	})
+	//check해도 값의 변화가 없음.
+
+</script>
+<title>Insert title here</title>
+</head>
+<body>	
+	<input type="checkbox" name="" id="chk" checked="checked">
+</body>
+</html>

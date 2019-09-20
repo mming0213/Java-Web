@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script type="text/javascript">
+	//a에 b를 merge하는데 원소스 유지
+	var a = {
+			id : 1,
+			name : 'TAM'
+	};
+	
+	var b = {
+			name: 'TAM-new',
+			hobby: 'football'
+	};
+	
+	var newobject = $.extend({}, a, b);
+	console.log(newobject);//{id: 1, name: "TAM-new", hobby: "football"}
+	console.log(a); //{id: 1, name: "TAM"}
+	console.log(b); //{name: "TAM-new", hobby: "football"}
+	
+	
+</script>
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>

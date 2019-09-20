@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script type="text/javascript">
+	//a에 b를 merge하고 그 결과에 c를 merge
+	var a = {
+			id:1,
+			name:'TAM'
+	};
+	
+	var b = {
+			name:'TAM-new',
+			job: 'designer'
+	};
+	
+	var c = {
+			name: 'TAM-new-new',
+			job: 'designer11'
+	};
+	
+	$.extend(a,b,c);
+	
+	console.log(a); //{id: 1, name: "TAM-new-new", job: "designer11"}
+
+	
+</script>
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>

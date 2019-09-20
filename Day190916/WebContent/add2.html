@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script type="text/javascript">
+   //p를 선택하고 추가로 이전인 div#after도 추가 
+   	$(document).ready(function(){
+		$("div#after").find("p").addBack().css({"backgroundColor":"aqua"});
+   	});
+</script>
+<title>Insert title here</title>
+</head>
+<body>
+	<div id="after">
+	<p>.addBack() 적용 후</p>
+ 	<p>안녕하세요. 데브쿠마입니다.</p>
+</div>
+</body>
+</html>

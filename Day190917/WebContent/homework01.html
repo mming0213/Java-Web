@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>동적 추가 만들기(jQuery)</title>
+<style>
+	.menu{
+		border: 1px solid gray;
+		padding: 25px;
+		width: 700px;
+	}
+	
+	.click{
+		background-color: red;
+	}
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		
+		
+		
+	//	$('#txt1').on("click", function(){
+	//		var content = $('#txt1').val();
+	//		$('.txt').val(content);	
+	//	});
+		
+		//추가
+		$('#btnAdd').click(function(){
+			var inputvalue = $('.txt').val();
+			$('.menu').append(
+				'<input type="text" class="'+inputvalue+'" value="'+inputvalue+'"><br><br>'
+			);	
+		});
+		
+		//수정
+		$('#btnEdit').click(function(){
+			var editvalue = $('.txt').val(); //변경 후 값
+			$("#view").attr("src", "./car_images/"+roll+".jpg");
+			
+				
+		});
+		
+		//삭제
+		$('#btnDel').on('click', function(){
+			var removevalue = $('.txt').val(); //메뉴4
+			var attr = $('.메뉴4').attr('class');
+			$('.'+removevalue).remove();
+			
+		});
+		
+	});
+</script>
+</head>
+<body>
+	<div>
+		<input type="text" class="txt">
+		<input type="button" id="btnAdd" value="추가">
+		<input type="button" id="btnEdit" value="수정">
+		<input type="button" id="btnDel" value="삭제">
+		<input type="button" id="btnUp" value="UP">
+		<input type="button" id="btnDonw" value="DOWN"><br><br>
+	</div>
+	<div class="menu">
+		<input type="text" class="메뉴1" name="TEXT" value="메뉴1"><br><br>
+		<input type="text" class="메뉴2" name="TEXT" value="메뉴2"><br><br>
+		<input type="text" class="메뉴3" name="TEXT" value="메뉴3"><br><br>
+	</div>
+	
+</body>
+</html>

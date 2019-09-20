@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script type="text/javascript">
+//전체 클릭 이벤트가 먹지 않도록 하기 위해 
+//stopPropagation() : 이벤트 전달을 제거 
+	$(document).ready(function(){
+		$("span").click(function(event){
+			event.stopPropagation();
+			alert("Then span element was clicked.");
+		});
+		$("p").click(function(event){
+			alert("The p element was clicked.");
+		});
+		$("div").click(function(){
+			alert("The div element was clicked.");
+		});
+	});
+</script>
+<title>Insert title here</title>
+</head>
+<body>
+	<div style="height:100px;width:500px;background-color:lightblue;">
+		This is a div element.
+		 <p style="background-color:pink">This is a p element <br>
+		   <span style="background-color:orange">This is a span element</span>
+		 </p>
+	</div>
+</body>
+</html>

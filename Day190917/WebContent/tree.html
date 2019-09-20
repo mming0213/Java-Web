@@ -1,0 +1,159 @@
+<HTML>
+<HEAD>
+<STYLE>
+body
+{
+   background-color: #FFFFFF;
+   color: #333333;
+   font-family: "굴림", "Verdana";
+   font-size:10pt;
+   line-height:150%;
+}
+
+table
+{
+   color: #333333;
+   font-family: "굴림", "Verdana";
+   font-size:10pt;
+   line-height:150%;
+}
+li{
+list-style:none;
+}
+
+A:link { font-size:10pt; font-family:굴림;color:#565656; text-decoration:none; }
+A:visited { font-size:10pt; font-family:굴림;color:#565656; text-decoration:none;  }
+A:active { font-size:10pt; font-family:굴림;color:#FF6000; text-decoration:none; }
+A:hover { font-size:10pt; font-family:굴림;color:#FF6000;text-decoration:none; }
+</STYLE>
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<SCRIPT>
+var data = {"name":"name","href":"A링크","target":"target","icon":"","child":[]};
+//자식개체를 하나 생성
+var childA = {"name":"관리자메뉴","href":"","target":"","icon":"./image/menu02.gif","child":[]};
+var childB = {"name":"직원메뉴","href":"","target":"","icon":"./image/menu02.gif","child":[]};
+var childC = {"name":"관리자메뉴","href":"","target":"","icon":"./image/menu02.gif","child":[]};
+//자식1의 하위개체를 생성
+var childA1 = {"name":"부하직원 조회","href":" http://w3schools.com","target":"_blank","icon":"./image/menu01.gif","child":[]};
+var childA2 = {"name":"결재승인","href":" http://w3schools.com","target":"_blank","icon":"./image/menu01.gif","child":[]};
+var childA3 = {"name":"결제내역 조회","href":" http://w3schools.com","target":"_blank","icon":"./image/menu01.gif","child":[]};
+var childB1 = {"name":"결제신청","href":" http://w3schools.com","target":"_blank","icon":"./image/menu01.gif","child":[]};
+var childB2 = {"name":"급여정보조회","href":" http://w3schools.com","target":"_blank","icon":"./image/menu01.gif","child":[]};
+var childB3 = {"name":"인사정보조회","href":" http://w3schools.com","target":"_blank","icon":"./image/menu01.gif","child":[]};
+var childC1 = {"name":"기준관리","href":" http://w3schools.com","target":"_blank","icon":"./image/menu01.gif","child":[]};
+var childC2 = {"name":"근무현화조회","href":" http://w3schools.com","target":"_blank","icon":"./image/menu01.gif","child":[]};
+var childC3 = {"name":"평가현황조회","href":" http://w3schools.com","target":"_blank","icon":"./image/menu01.gif","child":[]};
+function CreateTree(){
+
+//this.data_init = function(){
+   
+ //};
+
+  this.createView = function(){
+     document.body.innerHTML="";
+     console.log(data.child.length);
+     
+     for(var i =0; i<data.child.length; i++){
+        var element = data.child[i];
+
+        document.body.innerHTML +='<ul id="click'+i+'" ><img src="'+element.icon+'">'+element.name;
+        for(var j = 0; j<element.child.length;j++){
+           var element2 = element.child[j];
+           console.log(element2);
+          // document.body.innerHTML +='<li class ="menu">'
+           document.body.innerHTML +='<li class="menu"><a href="'+element2.href+'"><img src="'+element2.icon+'">'+element2.name+'</a></li>';
+        }
+        
+     }
+     document.body.innerHTML += '</ul>';
+
+    };
+}
+function init() {
+   console.log("init호출");
+   //alert("init")
+   var tree = new CreateTree(document.getElementById('div'));
+   //메뉴객체 생성
+   //name : a 태그에 나타나는 내용
+   //href : a 태그에 사용될 URL
+   //icon : 기본 아이콘 대신할 아이콘 URL
+   //child : 자식배열
+      
+   //$(document).ready(function(){
+     //  // menu 클래스 바로 하위에 있는 a 태그를 클릭했을때
+       //$(".menu>a").click(function(){
+         //  var submenu = $(this).next("ul");
+
+           /// submenu 가 화면상에 보일때는 위로 보드랍게 접고 아니면 아래로 보드랍게 펼치기
+           //if( submenu.is(":visible") ){
+             //  submenu.slideUp();
+           //}else{
+             //  submenu.slideDown();
+          // }
+      // });
+   //});
+
+
+
+   //자식1를 맨위개체에 붙이기
+   data.child.push(childA); 
+   data.child.push(childB);
+   data.child.push(childC);
+
+   //자식1의 하위개체 붙이기
+   childA.child.push(childA1); 
+   childA.child.push(childA2); 
+   childA.child.push(childA3); 
+   childB.child.push(childB1); 
+   childB.child.push(childB2); 
+   childB.child.push(childB3);
+   childC.child.push(childC1); 
+   childC.child.push(childC2); 
+   childC.child.push(childC3); 
+
+   console.log(childA);
+
+   //트리에 메뉴객체를 연결
+   //tree.data_init(data);
+   //트리메뉴를 화면에 보여준다 
+   tree.createView();
+   
+   
+
+   //document.getElementById('click').onclick=function(){
+   //   console.log("처음이다");
+         // menu 클래스 바로 하위에 있는 a 태그를 클릭했을때
+       $("#click0").click(function(){
+          var submenu = $(this).next(".menu");
+          // var submenu = menu.children();
+          console.log("두번째이다");
+             console.log(submenu);
+
+            //submenu 가 화면상에 보일때는 위로 보드랍게 접고 아니면 아래로 보드랍게 펼치기
+           if(submenu.is(":visible") ){
+               submenu.slideUp();
+               console.log("된다");
+           }else{
+               submenu.slideDown();
+           }
+            
+      });
+         
+         
+      $('#click0').toggle(function(){
+    	  
+      })
+   //};
+}
+
+
+
+
+
+
+</SCRIPT>
+</HEAD>
+<BODY OnLoad="init();">
+<DIV ID="div"></DIV>
+</BODY>
+</HTML>
